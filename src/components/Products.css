@@ -1,0 +1,363 @@
+
+/* =====================================
+   PRODUCTS SECTION
+   Mushad Hardware and Construction Store
+   ===================================== */
+
+.products-section {
+  padding: 90px 24px;
+  background: #f7f7f7;
+}
+
+.products-section .container {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+
+/* Section heading */
+
+.products-section .section-heading {
+  max-width: 740px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.products-section .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #D62828;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.products-section .section-heading h2 {
+  margin: 0 0 14px;
+  color: #202124;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.products-section .section-heading h2 span {
+  color: #D62828;
+}
+
+.products-section .section-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #707070;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Product cards grid */
+
+.products-section .products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 23px;
+  align-items: stretch;
+}
+
+/* Individual card */
+
+.products-section .product-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.035);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.products-section .product-card:hover {
+  transform: translateY(-7px);
+  border-color: #edbaba;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.09);
+}
+
+/* Product image area */
+
+.products-section .product-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 225px;
+  overflow: hidden;
+  background: #e9e9e9;
+  isolation: isolate;
+}
+
+.products-section .product-image::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+.products-section .product-image img {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.products-section .product-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+/* Fallback icon shown when the image is missing */
+
+.products-section .product-placeholder {
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #D62828;
+  background: linear-gradient(135deg, #eeeeee, #dedede);
+}
+
+/* Number badge */
+
+.products-section .product-number {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 39px;
+  height: 32px;
+  padding: 0 9px;
+  color: #ffffff;
+  background: #D62828;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Card content */
+
+.products-section .product-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 23px 20px 21px;
+}
+
+.products-section .product-content h3 {
+  margin: 0 0 10px;
+  color: #202124;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.13rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.products-section .product-content p {
+  flex: 1;
+  margin: 0 0 22px;
+  color: #707070;
+  font-size: 0.91rem;
+  line-height: 1.75;
+}
+
+/* WhatsApp enquiry link */
+
+.products-section .product-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  min-height: 43px;
+  margin-top: auto;
+  padding: 10px 12px;
+  color: #D62828;
+  background: #fff5f5;
+  border: 1px solid #f4d5d5;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.products-section .product-link:hover {
+  color: #ffffff;
+  background: #D62828;
+  border-color: #D62828;
+}
+
+.products-section .product-link svg {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.products-section .product-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 1024px) {
+  .products-section .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .products-section .product-image {
+    height: 230px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .products-section {
+    padding: 58px 18px;
+  }
+
+  .products-section .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .products-section .section-heading h2 {
+    font-size: clamp(1.8rem, 7vw, 2.35rem);
+    letter-spacing: -0.6px;
+  }
+
+  .products-section .section-heading p {
+    font-size: 0.92rem;
+  }
+
+  .products-section .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .products-section .product-image {
+    height: 155px;
+  }
+
+  .products-section .product-content {
+    padding: 16px 12px 14px;
+  }
+
+  .products-section .product-content h3 {
+    font-size: 0.98rem;
+  }
+
+  .products-section .product-content p {
+    margin-bottom: 16px;
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .products-section .product-link {
+    min-height: 41px;
+    padding: 9px;
+    font-size: 0.75rem;
+  }
+
+  .products-section .product-number {
+    top: 9px;
+    left: 9px;
+    min-width: 33px;
+    height: 28px;
+    font-size: 0.72rem;
+  }
+}
+
+/* Very narrow phones */
+
+@media (max-width: 360px) {
+  .products-section .products-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .products-section .product-image {
+    height: 210px;
+  }
+
+  .products-section .product-content {
+    padding: 19px;
+  }
+
+  .products-section .product-content h3 {
+    font-size: 1.08rem;
+  }
+
+  .products-section .product-content p {
+    font-size: 0.9rem;
+  }
+
+  .products-section .product-link {
+    font-size: 0.84rem;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .products-section .product-card,
+  .products-section .product-image img,
+  .products-section .product-link,
+  .products-section .product-link svg {
+    transition: none;
+  }
+}
+
+
+/* Products section spacing and navbar anchor positioning */
+/* Products section spacing and navbar anchor positioning */
+#products {
+  padding-top: 42px;
+  padding-bottom: 60px;
+  margin-top: 0;
+  scroll-margin-top: 90px;
+}
+
+#products .section-heading {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+#products .products-grid {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  #products {
+    scroll-margin-top: 82px;
+  }
+}

@@ -1,0 +1,446 @@
+
+/* =====================================
+   ABOUT SECTION
+   Mushad Hardware and Construction Store
+===================================== */
+
+.about-section {
+  padding: 48px 0;
+  background: #fff;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center;
+  gap: 32px;
+}
+
+/* VIDEO */
+
+.about-visual {
+  position: relative;
+  min-width: 0;
+  padding-bottom: 24px;
+}
+
+.about-image {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #171717;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-video {
+  isolation: isolate;
+}
+
+.about-video-player {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+
+.about-video-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5),
+    transparent 55%
+  );
+}
+
+.about-video-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.about-video-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #d62828;
+}
+
+/* TRANSPARENT SOUND ICON - TOP RIGHT */
+
+.about-sound-control {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.about-sound-control svg {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  stroke: currentColor;
+}
+
+.about-sound-control:hover,
+.about-play-control:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* TRANSPARENT PLAY / PAUSE ICON - BOTTOM RIGHT */
+
+.about-play-control {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.about-play-control svg {
+  width: 23px;
+  height: 23px;
+  color: #fff;
+  stroke: currentColor;
+}
+
+.about-sound-control:focus-visible,
+.about-play-control:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* VIDEO FALLBACK */
+
+.about-video-fallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+.about-video-fallback strong {
+  font-size: 22px;
+}
+
+.about-video-fallback span,
+.about-video-fallback small {
+  color: #ddd;
+  overflow-wrap: anywhere;
+}
+
+/* HIGHLIGHT CARD */
+
+.about-highlight {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  z-index: 4;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: min(90%, 350px);
+  padding: 18px;
+
+  background: #fff;
+  border: 1px solid #ededed;
+  border-radius: 15px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
+}
+
+.about-highlight-icon {
+  display: flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #d62828;
+  background: #fff0e5;
+  border-radius: 12px;
+}
+
+.about-highlight-text strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #222;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.about-highlight-text p {
+  margin: 0;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* ABOUT CONTENT */
+
+.about-copy {
+  min-width: 0;
+}
+
+.about-copy .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #d62828;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.about-copy h2 {
+  margin: 0 0 18px;
+  color: #202020;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.about-copy h2 span {
+  color: #d62828;
+}
+
+.about-copy > p {
+  margin: 0 0 12px;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* STRENGTHS */
+
+.strength-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 22px 0;
+}
+
+.strength-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.strength-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+.strength-icon img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: contain;
+  background: transparent;
+}
+
+.strength-fallback-icon {
+  background: transparent;
+  color: #D62828;
+}
+
+
+.strength-fallback-icon.fallback-visible {
+  display: block;
+}
+
+.strength-item h3 {
+  margin: 1px 0 4px;
+  color: #222;
+  font-size: 15px;
+}
+
+.strength-item p {
+  margin: 0;
+  color: #707070;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* CONTACT BUTTON */
+
+.about-copy .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 22px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  background: #d62828;
+  border: 1px solid #d62828;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.about-copy .btn:hover {
+  background: #b91f24;
+  transform: translateY(-2px);
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 38px 0;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .about-image {
+    height: 460px;
+  }
+
+  .about-copy h2 {
+    font-size: clamp(28px, 3.4vw, 36px);
+  }
+
+  .about-highlight {
+    right: -5px;
+    width: 94%;
+    padding: 15px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-image {
+    height: clamp(320px, 70vw, 430px);
+    border-radius: 17px;
+  }
+
+  .about-highlight {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .about-copy h2 {
+    font-size: clamp(29px, 6vw, 38px);
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 30px 0;
+  }
+
+  .about-layout {
+    gap: 25px;
+  }
+
+  .about-image {
+    height: 310px;
+    border-radius: 15px;
+  }
+
+  .about-sound-control {
+    top: 8px;
+    right: 8px;
+  }
+
+  .about-play-control {
+    right: 8px;
+    bottom: 8px;
+  }
+
+  .about-video-caption {
+    left: 12px;
+    bottom: 18px;
+    font-size: 11px;
+  }
+
+  .about-highlight {
+    right: 8px;
+    width: calc(100% - 16px);
+    padding: 12px;
+  }
+
+  .about-copy h2 {
+    font-size: 29px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-copy .btn {
+    transition: none;
+  }
+}

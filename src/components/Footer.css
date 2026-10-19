@@ -1,0 +1,309 @@
+
+/* =====================================
+   FOOTER
+   Mushad Hardware and Construction Store
+   ===================================== */
+
+.footer {
+  position: relative;
+  padding: 30px 24px 12px;
+  background: #202124;
+  color: #ffffff;
+}
+.footer .container {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+
+/* Main footer columns */
+
+.footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1.1fr;
+  gap: 55px;
+  padding-bottom: 42px;
+}
+
+/* Store branding */
+
+.footer .footer-brand {
+  min-width: 0;
+}
+
+.footer .brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 18px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer .logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #D62828;
+  border-radius: 9px;
+}
+
+.footer .brand-logo > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer .brand-logo strong {
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.16rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.footer .brand-logo small {
+  color: #c8c8c8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.footer .footer-brand > p {
+  max-width: 360px;
+  margin: 0;
+  color: #c5c5c5;
+  font-size: 0.93rem;
+  line-height: 1.85;
+}
+
+/* Footer column headings */
+
+.footer .footer-grid > div:not(.footer-brand) {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.footer .footer-grid h3 {
+  position: relative;
+  margin: 0 0 8px;
+  padding-bottom: 12px;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.footer .footer-grid h3::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 38px;
+  height: 3px;
+  content: "";
+  background: #D62828;
+  border-radius: 3px;
+}
+
+/* Quick links and contact links */
+
+.footer .footer-grid > div > a:not(.brand-logo) {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
+  color: #c5c5c5;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer .footer-grid > div > a:not(.brand-logo):hover {
+  color: #ff6262;
+  transform: translateX(3px);
+}
+
+.footer .footer-grid > div > a svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #ff6262;
+}
+
+/* Copyright row */
+
+.footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+  border-top: 1px solid #414141;
+}
+
+.footer .footer-bottom p {
+  margin: 0;
+  color: #bcbcbc;
+  font-size: 0.83rem;
+  line-height: 1.7;
+}
+
+.footer .back-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: #ffffff;
+  background: #D62828;
+  border: 1px solid #D62828;
+  border-radius: 8px;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer .back-top:hover {
+  background: #B91F24;
+  transform: translateY(-3px);
+}
+
+/* Floating WhatsApp button */
+
+.footer .whatsapp-float {
+  position: fixed;
+  z-index: 1000;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  color: #ffffff;
+  background: #25D366;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 7px 24px rgba(0, 0, 0, 0.22);
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.footer .whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .footer .footer-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 38px;
+  }
+
+  .footer .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer .footer-brand > p {
+    max-width: 520px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 45px 20px 20px;
+  }
+
+  .footer .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-bottom: 30px;
+  }
+
+  .footer .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer .footer-grid > div:not(.footer-brand) {
+    gap: 12px;
+  }
+
+  .footer .footer-bottom {
+    align-items: flex-start;
+    gap: 14px;
+    padding-top: 18px;
+  }
+
+  .footer .footer-bottom p {
+    font-size: 0.78rem;
+  }
+
+  .footer .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer a,
+  .footer .back-top,
+  .footer .whatsapp-float {
+    transition: none;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-brand h3 {
+  margin: 0;
+}
+
+.footer-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.footer-brand-logo img {
+  display: block;
+  width: 75px;
+  height: 55px;
+  object-fit: contain;
+  object-position: left center;
+  border: 0;
+  box-shadow: none;
+}
+
+/* Hide the old icon if it is still inside the logo link */
+.footer-brand-logo svg {
+  display: none;
+}

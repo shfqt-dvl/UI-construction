@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ==========================================
+   1. GLOBAL RESET
+========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #D62828;
+  --primary-dark: #B91F24;
+  --dark: #202124;
+  --text: #333333;
+  --muted: #707070;
+  --light: #F7F7F7;
+  --white: #FFFFFF;
+  --navbar-height: 90px;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--white);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-wrap: break-word;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+
+/* ==========================================
+   2. SHARED CONTAINER
+========================================== */
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================
+   3. SECTION SCROLLING
+   One consistent anchor-offset method
+========================================== */
+
+#home {
+  scroll-margin-top: 0;
+}
+
+#brands,
+#products,
+#about,
+#services,
+#contact {
+  scroll-margin-top: var(--navbar-height);
+}
+
+/* ==========================================
+   4. COMMON SECTION HEADINGS
+========================================== */
+
+.section-heading {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-heading h2,
+.section-title {
+  margin-bottom: 14px;
+  color: var(--dark);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Small heading above section titles */
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   5. SHARED BUTTONS
+========================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 22px;
+  border: 2px solid transparent;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.btn-primary {
+  color: var(--white);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  color: var(--white);
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  color: var(--dark);
+  background: var(--white);
+  border-color: #DDDDDD;
+}
+
+.btn-secondary:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   6. FLOATING CALL BUTTON
+========================================== */
+
+.call-button,
+.call-float {
+  position: fixed;
+  right: 22px;
+  bottom: 92px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  color: var(--white);
+  background: #16803C;
+  border-radius: 50%;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease;
+}
+
+.call-button:hover,
+.call-float:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   7. BACK TO TOP BUTTON
+========================================== */
+
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--white);
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  transition: background-color 0.25s ease;
+}
+
+.back-to-top:hover {
+  background: var(--primary-dark);
+}
+
+/* ==========================================
+   8. KEYFRAME ANIMATIONS
+========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   9. TABLETS
+========================================== */
+
+@media (max-width: 950px) {
+  .container {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .section-heading {
+    margin-bottom: 34px;
+  }
+}
+
+/* ==========================================
+   10. MOBILE
+========================================== */
+
+@media (max-width: 760px) {
+  :root {
+    --navbar-height: 82px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  #brands,
+  #products,
+  #about,
+  #services,
+  #contact {
+    scroll-margin-top: 82px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2,
+  .section-title {
+    font-size: clamp(26px, 7vw, 34px);
+  }
+
+  .section-heading p {
+    font-size: 14px;
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: 11px 17px;
+  }
+
+  .call-button,
+  .call-float {
+    right: 15px;
+    bottom: 78px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* ==========================================
+   11. SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   12. KEYBOARD ACCESSIBILITY
+========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(214, 40, 40, 0.45);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   13. REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   GLOBAL FADE-IN-ON-SCROLL ANIMATIONS
+   MUSHAD HARDWARE AND CONSTRUCTION STORE
+========================================= */
+
+/* Smooth animation for AOS elements */
+[data-aos] {
+  transition-timing-function: ease-out !important;
+}
+
+/* Fade-in animation */
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translate3d(0, 35px, 0);
+}
+
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Fade-in from left */
+[data-aos="fade-right"] {
+  opacity: 0;
+  transform: translate3d(-35px, 0, 0);
+}
+
+[data-aos="fade-right"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Fade-in from right */
+[data-aos="fade-left"] {
+  opacity: 0;
+  transform: translate3d(35px, 0, 0);
+}
+
+[data-aos="fade-left"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Simple fade */
+[data-aos="fade"] {
+  opacity: 0;
+}
+
+[data-aos="fade"].aos-animate {
+  opacity: 1;
+}
+
+/* Respect reduced-motion accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+}
