@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import "./Hero.css";
@@ -39,8 +38,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((current) => {
-        if (current >= slides.length) return current;
-        return current + 1;
+        return current >= slides.length ? current : current + 1;
       });
     }, 4000);
 
@@ -73,8 +71,13 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero" data-aos="fade" id="home">
-      <div className="hero-background">
+    <section
+      className="hero"
+      data-aos="fade"
+      id="home"
+      aria-label="Mushad Construction and Hardware Store"
+    >
+      <div className="hero-background" aria-hidden="true">
         <div
           className={`hero-slider-track ${
             transitionEnabled ? "slider-animated" : "slider-reset"
@@ -87,22 +90,20 @@ export default function Hero() {
           }}
         >
           {allSlides.map((slide, index) => (
-            <div
-              className="hero-slide"
-              key={`${slide.src}-${index}`}
-            >
+            <div className="hero-slide" key={`${slide.src}-${index}`}>
               <img
                 src={slide.src}
-                alt={slide.alt}
+                alt=""
                 loading={index === 0 ? "eager" : "lazy"}
                 fetchPriority={index === 0 ? "high" : "auto"}
+                decoding="async"
               />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="hero-overlay" />
+      <div className="hero-overlay" aria-hidden="true" />
 
       <div className="hero-content">
         <span className="hero-eyebrow">
@@ -125,17 +126,17 @@ export default function Hero() {
 
         <div className="hero-buttons">
           <a href="#products" className="btn btn-primary">
-            Explore Products <ArrowRight size={18} />
+            Explore Products <ArrowRight size={18} aria-hidden="true" />
           </a>
 
           <a href="#contact" className="btn btn-secondary">
-            <Phone size={17} />
+            <Phone size={17} aria-hidden="true" />
             Contact Us
           </a>
         </div>
       </div>
 
-      <div className="hero-slider-dots">
+      <div className="hero-slider-dots" aria-label="Hero image navigation">
         {slides.map((slide, index) => (
           <button
             key={slide.src}
@@ -146,7 +147,7 @@ export default function Hero() {
                 : "hero-slider-dot"
             }
             onClick={() => showSlide(index)}
-            aria-label={`Show image ${index + 1}`}
+            aria-label={`Show construction image ${index + 1}`}
             aria-pressed={index === currentSlide % slides.length}
           />
         ))}
