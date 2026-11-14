@@ -60,7 +60,7 @@ export default function Contact() {
     </span>
     <span>
       <strong>Email Us</strong>
-      <small>mushadconstruction@gmail.com</small>
+      <small>mushadconstruction.web@gmail.com</small>
     </span>
     <ArrowUpRight className="contact-arrow" size={19} />
   </a>

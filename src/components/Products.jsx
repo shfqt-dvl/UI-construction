@@ -7,6 +7,11 @@ import {
   Wrench,
 } from "lucide-react";
 
+
+
+const MAIN_WEBSITE =
+  "https://mushadconstructionin.vercel.app/#product-categories";
+  
 const categories = [
   {
     title: "Building Materials",
@@ -14,6 +19,7 @@ const categories = [
     icon: Blocks,
     image: "/Brands/material.png",
     number: "01",
+    link: MAIN_WEBSITE,
   },
   {
     title: "Paints & Finishes",
@@ -21,6 +27,7 @@ const categories = [
     icon: Paintbrush,
     image: "/Brands/paint.png",
     number: "02",
+    link: MAIN_WEBSITE,
   },
   {
     title: "Pipes & Water Tanks",
@@ -28,6 +35,7 @@ const categories = [
     icon: Pipette,
     image: "/Brands/pipes.png",
     number: "03",
+    link: MAIN_WEBSITE,
   },
   {
     title: "Sanitary & Hardware",
@@ -35,17 +43,18 @@ const categories = [
     icon: Wrench,
     image: "/Brands/sanitary.png",
     number: "04",
+    link: MAIN_WEBSITE,
   },
 ];
 
+
 export default function Products() {
   return (
-    
-<section
-  className="section products-section"
-  id="products"
-  data-aos="fade-up"
->
+    <section
+      className="section products-section"
+      id="products"
+      data-aos="fade-up"
+    >
       <div className="container">
         <div className="section-heading">
           <span className="eyebrow">WHAT WE OFFER</span>
@@ -86,15 +95,13 @@ export default function Products() {
                   <p>{category.description}</p>
 
                   <a
-                    className="product-link"
-                    href={`https://wa.me/919162512232?text=${encodeURIComponent(
-                      `Hello, I would like to enquire about ${category.title}.`
-                    )}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Enquire on WhatsApp <ArrowUpRight size={17} />
-                  </a>
+  className="product-link"
+  href={category.link}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Explore Products <ArrowUpRight size={17} />
+</a>
                 </div>
               </article>
             );
